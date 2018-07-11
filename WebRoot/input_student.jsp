@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" import="java.util.*"
+	contentType="text/html; charset=UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -10,7 +11,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'wen.jsp' starting page</title>
+<title>My JSP 'input_student.jsp' starting page</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -24,22 +25,17 @@
 </head>
 
 <body>
-	<jsp:useBean id="user" class="com.codewen.entity.User"></jsp:useBean>
+	This is my JSP page.
+	<br>
+	<%
+		request.setCharacterEncoding("utf-8");
+	%>
+	<jsp:useBean id="student" class="com.codewen.entity.Student"></jsp:useBean>
 	<jsp:useBean id="controller" class="com.codewen.serv.Controller"></jsp:useBean>
-	<jsp:setProperty property="*" name="user" /> 
-
+	<jsp:setProperty property="*" name="student" />
 	<%
-		if (controller.login(user)) {
-			session.setAttribute("user", user);
+		controller.inputStudent(student);
+		
 	%>
-	<jsp:forward page="main.jsp"></jsp:forward>
-	<%
-		} else {
-	%>
-	<jsp:forward page="index.jsp"></jsp:forward>
-	<%
-		}
-	%>
-
 </body>
 </html>

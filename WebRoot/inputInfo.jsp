@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*"
+	contentType="text/html; charset=UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -25,9 +26,9 @@
 
 <body>
 	This is my input JSP page.
-	<br>
+
 	<hr>
-	<form action="" method="post">
+	<form action="input_student.jsp" method="post">
 		<center>
 			<table>
 				<tr align="center">
@@ -35,11 +36,11 @@
 				</tr>
 				<tr>
 					<td>昵称
-					<td><input type="text">
+					<td><input type="text" name="nname">
 				</tr>
 				<tr>
 					<td>真实姓名
-					<td><input type="text">
+					<td><input type="text" name="tname">
 				</tr>
 				<tr>
 					<td>性别
@@ -48,19 +49,37 @@
 				</tr>
 				<tr>
 					<td>出生日期
-					<td><input type="text">
+					<td><input type="text" name="birthday">
 				</tr>
 				<tr>
 					<td>专业
-					<td><select>
+					<td><select name="major">
 							<option>软件工程</option>
 							<option>通信工程</option>
 							<option selected>游戏工程</option>
 							<option>体育工程</option>
 					</select>
 				</tr>
+				<tr>
+					<td>課程
+					<td><select name="tclass" multiple="multiple">
+							<option>英語1</option>
+							<option>英語2</option>
+							<option>英語3</option>
+							<option>英語4</option>
+					</select>
+				</tr>
+				<tr>
+					<td>興趣
+					<td><input type="checkbox" value="ball" name="interesting">打球
+						<input type="checkbox" value="book" name="interesting">看書
+						<input type="checkbox" value="song" name="interesting">聽歌
+						<input type="checkbox" value="sport" name="interesting">運動
 
+					
+				</tr>
 			</table>
+			<input type="submit" value="tijiao">
 		</center>
 	</form>
 </body>
