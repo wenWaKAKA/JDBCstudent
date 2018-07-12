@@ -5,7 +5,7 @@ public class Student {
 	private Integer id;
 	private String tname;
 	private String nname;
-	private Boolean sex;
+	private Byte sex;
 	private String birthday;
 	private String major;
 	private String tclass;
@@ -37,11 +37,11 @@ public class Student {
 		this.nname = nname;
 	}
 
-	public Boolean getSex() {
+	public Byte getSex() {
 		return sex;
 	}
 
-	public void setSex(Boolean sex) {
+	public void setSex(Byte sex) {
 		this.sex = sex;
 	}
 
