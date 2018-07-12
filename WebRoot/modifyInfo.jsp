@@ -24,7 +24,9 @@
 	-->
 
 </head>
+<%
 
+ %>
 <body>
 	This is my di JSP page.
 	<br>
