@@ -2,7 +2,11 @@ package com.codewen.conn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+/**
+ * JDBC 的connection的获取
+ * @author WEN
+ *
+ */
 public class GetConn {
 
 	public static Connection getConnection() {
