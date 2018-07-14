@@ -11,12 +11,22 @@ import com.codewen.conn.GetConn;
 import com.codewen.entity.Student;
 import com.codewen.entity.User;
 
+/**
+ * 控制中心，负责与SQL 的数据交互
+ * @author WEN
+ *
+ */
 public class Controller {
 
 	Connection connection = GetConn.getConnection();
 	PreparedStatement preparedStatement = null;
 	ResultSet resultSet = null;
 
+	/**
+	 * 登陆模块
+	 * @param user
+	 * @return
+	 */
 	public boolean login(User user) {
 		try {
 			preparedStatement = connection.prepareStatement("select * from user where username=? and password=?");
@@ -46,6 +56,10 @@ public class Controller {
 		}
 	}
 
+	/**
+	 * 插入模块
+	 * @param student
+	 */
 	public void inputStudent(Student student) {
 		try {
 			preparedStatement = connection.prepareStatement(
@@ -74,6 +88,11 @@ public class Controller {
 		}
 	}
 
+	/**
+	 * 
+	 * 信息展示模块
+	 * @return
+	 */
 	public List<Student> disPlay() {
 		List<Student> stusList = new ArrayList<Student>();
 		try {
@@ -100,6 +119,11 @@ public class Controller {
 
 	}
 
+	/**
+	 * 查询模块
+	 * @param id
+	 * @return
+	 */
 	public Student findbyid(int id) {
 		try {
 			Student student = null;
@@ -136,6 +160,11 @@ public class Controller {
 		}
 	}
 
+	/**
+	 * 更新模块
+	 * @param student
+	 * @param id
+	 */
 	public void insertbyid(Student student, int id) {
 		try {
 			preparedStatement = connection.prepareStatement(
@@ -165,6 +194,10 @@ public class Controller {
 		}
 	}
 
+	/**
+	 * 删除模块
+	 * @param id
+	 */
 	public void deletebyid(int id) {
 		try {
 			preparedStatement = connection.prepareStatement("delete from student where id=?");

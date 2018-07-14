@@ -1,5 +1,10 @@
 package com.codewen.entity;
 
+/**
+ * student bean
+ * @author WEN
+ *
+ */
 public class Student {
 
 	private Integer id;

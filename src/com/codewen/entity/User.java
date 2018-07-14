@@ -1,5 +1,9 @@
 package com.codewen.entity;
-
+/**
+ * user bean
+ * @author WEN
+ *
+ */
 public class User {
 
 	private String userName;
